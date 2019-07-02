@@ -9,3 +9,21 @@ $pdfs.attr('download', true);
 
 $secureLinks.addClass('secure');
 $pdfs.addClass('pdf');
+
+/*
+check if checkbox is checked
+if zero checkboxes are checked
+  - prevent download
+  - alert the user
+else allow download
+*/
+$pdfs.on('click', e => {
+  if ($(':checked').length === 0) {
+    e.preventDefault();
+    alert('Allow PDF downloads is not checked.');
+  }
+});
+
+// make the code unobtrusive, make checkbox appear when JS is broken or unavailable
+const $checkbox = $('<label><input type="checkbox"> Allow PDF downloads</label>');
+$('#links').append($checkbox);
