@@ -4,9 +4,9 @@ when the button is pressed:
  - hide the button
 */
 
-$('.spoiler').on('click', 'button', () => {
-  spoilerText.show();
-  spoilerButton.hide();
+$('.spoiler').on('click', 'button', (e) => {
+  // spoilerText.show();
+  $(e.target).hide();
 });
 
 // create "Reveal Spoiler" button
