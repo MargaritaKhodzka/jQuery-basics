@@ -27,3 +27,10 @@ $pdfs.on('click', e => {
 // make the code unobtrusive, make checkbox appear when JS is broken or unavailable
 const $checkbox = $('<label><input type="checkbox"> Allow PDF downloads</label>');
 $('#links').append($checkbox);
+
+// loop with each()
+$('a').each( function() {
+  // console.log($(this).attr('href'));
+  const url = $(this).attr('href');
+  $(this).parent().append(`(${url})`);
+});
